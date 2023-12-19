@@ -42,19 +42,24 @@ class Particle {
         }
     }
 
-    // draws the particle lines
+    // draws the lines that the particle follows
+    drawLine() {
+        // starts the line at the particle's initial position
+        ctx.beginPath();
+        ctx.moveTo(this.particlePosition[0].x, this.particlePosition[0].y);
+
+        // draws the line based on the length of the particle
+        for (let i = 0; i < this.particlePosition.length; i++){
+            ctx.lineTo(this.particlePosition[i].x, this.particlePosition[i].y);
+        }
+    }
+
+    // draws the particle
     draw() {
         if (imageMode){
             // saves the ctx values so they don't get overwritten
             ctx.save();
-            // starts the line at the particle's initial position
-            ctx.beginPath();
-            ctx.moveTo(this.particlePosition[0].x, this.particlePosition[0].y);
-    
-            // draws the line based on the length of the particle
-            for (let i = 0; i < this.particlePosition.length; i++){
-                ctx.lineTo(this.particlePosition[i].x, this.particlePosition[i].y);
-            }
+            this.drawLine();
     
             // add a shadow to the random longer lines
             if (this.maxLength > 120){
@@ -68,15 +73,7 @@ class Particle {
             ctx.restore(); // restores the ctx settings
         }
         else if (textMode){
-            // starts the line at the particle's initial position
-            ctx.beginPath();
-            ctx.moveTo(this.particlePosition[0].x, this.particlePosition[0].y);
-
-            // draws the line based on the length of the particle
-            for (let i = 0; i < this.particlePosition.length; i++){
-                ctx.lineTo(this.particlePosition[i].x, this.particlePosition[i].y);
-            }
-    
+            this.drawLine();
             ctx.strokeStyle = this.textParticleColor;
             ctx.stroke(); // draws the line on the canvas
         }
