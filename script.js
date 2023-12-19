@@ -359,6 +359,17 @@ class ParticleEffect {
             }    
         });
 
+        // changes the mode when the window is clicked
+        canvas.addEventListener('click', e => {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            showImage = false;
+            showText = false;
+
+            imageMode = !imageMode;
+            textMode = !textMode;
+            this.init();
+        });
+
         // dynamic window resizing
         window.addEventListener('resize', e => {
             let width = Math.ceil(e.target.innerWidth / this.cellSize) * this.cellSize;
