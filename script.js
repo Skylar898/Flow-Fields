@@ -360,7 +360,7 @@ class ParticleEffect {
         });
 
         // changes the mode when the window is clicked
-        window.addEventListener('click', e => {
+        canvas.addEventListener('click', e => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             showImage = false;
             showText = false;
