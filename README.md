@@ -16,3 +16,6 @@ In addition to this, the following features have also been added.
   - Added the ability to display the base image/text that the flow field is active on
   - Dynamic window resizing, allows the window to be resized any amount and the flow field will not be affected
   - Pages should also work on other devices (i.e. mobile)
+
+https://github.com/Skylar898/Flow-Fields/assets/122387513/65ae0a82-825c-44b0-8a1b-0977268dfd4c
+
